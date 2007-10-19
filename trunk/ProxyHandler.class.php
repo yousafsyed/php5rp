@@ -100,7 +100,7 @@ class ProxyHandler
         elseif(preg_match(',^Pragma:,', $string)) {
             $this->pragma = true;
         }
-        if (header !== "\r\n") {
+        if ($string !== "\r\n") {
             header(rtrim($string));
 
         }
