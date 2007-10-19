@@ -15,8 +15,8 @@ class ProxyHandler
     function __construct($url, $proxy_url)
     {
         // Strip the trailing '/' from the URLs so they are the same.
-        $this->url = preg_replace(',/$,','',$url);
-        $this->proxy_url =  preg_replace(',/$,','',$proxy_url);
+        $this->url = rtrim($url,'/');
+        $this->proxy_url =  rtrim($proxy_url,'/');
 
         // Parse all the parameters for the URL
         if (isset($_SERVER['PATH_INFO']))
